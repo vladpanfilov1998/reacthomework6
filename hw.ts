@@ -1,6 +1,6 @@
 //1) создать интерфейс на основе этого объекта:
 
-import {IUser} from "./interface/user.interface";
+import {IUser, IUserDates} from "./interface/user.interface";
 
 const user: IUser = {
     mission_name: 'Starlink-15 (v1.0)',
@@ -36,20 +36,20 @@ const user: IUser = {
 
 // 2) протипизировать функции:
 
-const user1:{name:string, age:number, gender:string} = {name: "Max", age: 18, gender:'male'}
+const user1:IUserDates = {name: "Max", age: 18, gender:'male'}
 
 
-const sum = (a:number, b:number) => {
+const sum = (a:number, b:number):number => {
     return a+b
 }
 
-const showSum = (a:number, b:number) => {
+const showSum = (a:number, b:number):void => {
     console.log(a + b);
 }
 
-const incAge = (someUser:number, inc:number) => {
+const incAge = (someUser: IUserDates, inc: number):IUserDates => {
 
-    someUser+=inc
+    someUser.age+=inc
     return someUser
 }
 
@@ -57,4 +57,4 @@ console.log(sum(1, 2));
 
 showSum(2,3);
 
-incAge(user1.age, 2);
+incAge(user1, 2);

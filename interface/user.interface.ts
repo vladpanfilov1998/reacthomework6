@@ -28,6 +28,10 @@ export interface IUser {
     }
 }
 
-
+export interface IUserDates {
+    name: string;
+    age: number;
+    gender: string
+}
 
 
